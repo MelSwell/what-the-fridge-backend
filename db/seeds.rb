@@ -11,8 +11,8 @@ Section.destroy_all
 Fridge.destroy_all
 User.destroy_all
 
-user1 = User.create(name: "Diana", email: "DiJali@gmail.com")
-user2 = User.create(name: "Seth", email: "Smcohen82@gmail.com")
+user1 = User.create(name: "Diana", email: "dijali@gmail.com")
+user2 = User.create(name: "Seth", email: "smcohen82@gmail.com")
 
 fridge1 = Fridge.create(name: "Diana's Fridge", user_id: user1.id)
 fridge2 = Fridge.create(name: "Seth's Fridge", user_id: user2.id)

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  post 'users/login', to: 'users#login'
+  
   resources :items
   resources :sections
   resources :fridges
