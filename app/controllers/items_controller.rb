@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
   def update
     set_item
     @item.update(item_params)
+    # consider if we want stronger params for item update, e.g. quantity & expiration only
     
     render json: @item
   end

@@ -1,8 +1,6 @@
 class SectionsController < ApplicationController
 
   def show
-    set_section
-
     render json: set_section
   end
 
