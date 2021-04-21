@@ -1,4 +1,9 @@
 class ItemsController < ApplicationController
+  
+  def show
+    render json: set_item
+  end
+  
   def create
     item = Item.create(item_params)
     if item.valid?
@@ -8,12 +13,22 @@ class ItemsController < ApplicationController
     end
   end
 
+  def update
+    set_item
+    @item.update(item_params)
+    
+    render json: @item
+  end
+
   def destroy 
-    Item.find(params[:id]).destroy
+    set_item.destroy
     render json: {}
   end
 
   private
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.permit(:name, :image, :quantity, :date_added, :expiration_date, :section_id)
