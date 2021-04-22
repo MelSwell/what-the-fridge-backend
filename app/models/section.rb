@@ -10,4 +10,8 @@ class Section < ApplicationRecord
   def items_by_alpha
     items.sort_by{|item1| item1.name.downcase }
   end
+
+  def class_type
+    "section"
+  end
 end
