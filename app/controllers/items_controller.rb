@@ -32,6 +32,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.permit(:name, :image, :quantity, :date_added, :expiration_date, :section_id)
+    params.permit(:name, :image, :quantity, :date_added, :expiration_date, :section_id, :trash)
   end
 end

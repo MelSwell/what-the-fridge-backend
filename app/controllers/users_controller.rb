@@ -17,7 +17,8 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    Fridge.create(name: "#{user.name}'s Fridge", user_id: user.id)
+    fridge = Fridge.create(name: "#{user.name}'s Fridge", user_id: user.id)
+    Section.create(name: "Trash", fridge_id:fridge.id)
     if user.valid?
       render json: user
     else

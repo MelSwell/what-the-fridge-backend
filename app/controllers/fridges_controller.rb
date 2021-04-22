@@ -5,6 +5,7 @@ class FridgesController < ApplicationController
 
   def create
     fridge = Fridge.create(fridge_params)
+    
     if fridge.valid?
       render json: fridge
     else
